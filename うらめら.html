@@ -63,6 +63,13 @@
     <button onclick="recordStart()">録画開始</button>
     <button onclick="recordStop()">録画停止</button> -->
     <script>
+
+        navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+            stream.getVideoTracks().forEach(track => {
+                track.stop()
+            });
+        })
+
         // ---地図の表示
         let map = L.map('map').setView([38.2610657, 140.8864946], 14);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
