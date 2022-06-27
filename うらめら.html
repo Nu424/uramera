@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
-    <title>うらめら</title>
+    <title>うらめらc01</title>
     <style>
         .display {
             width: 90vw;
@@ -147,7 +147,7 @@
                 // 録画開始の処理
                 isRecording = true
                 e.target.textContent = "録画とめる"
-                recorder = new MediaRecorder(mediaStream, { mimeType: 'video/x-matroska;codecs=avc1' })
+                recorder = new MediaRecorder(mediaStream, { mimeType: 'video/webm' })
                 recorder.ondataavailable = (e) => {
                     // 録画終了時の処理をあらかじめ用意しておくスタイル。
                     // 「Blob作ってURLにしてaタグからダウンロードさせる」といういつもの流れ。
@@ -155,7 +155,7 @@
                     let blobURL = window.URL.createObjectURL(videoBlob)
                     let elementA = document.querySelector("#download")
                     elementA.href = blobURL
-                    elementA.download = "record.mkv"
+                    elementA.download = "record.webm"
                     elementA.click()
                     // console.log(e.data.type)
                 }
