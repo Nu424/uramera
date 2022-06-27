@@ -147,7 +147,7 @@
                 // 録画開始の処理
                 isRecording = true
                 e.target.textContent = "録画とめる"
-                recorder = new MediaRecorder(mediaStream, { mimeType: 'video/webm;codecs=vp9' })
+                recorder = new MediaRecorder(mediaStream, { mimeType: 'video/x-matroska;codecs=avc1' })
                 recorder.ondataavailable = (e) => {
                     // 録画終了時の処理をあらかじめ用意しておくスタイル。
                     // 「Blob作ってURLにしてaタグからダウンロードさせる」といういつもの流れ。
@@ -155,7 +155,7 @@
                     let blobURL = window.URL.createObjectURL(videoBlob)
                     let elementA = document.querySelector("#download")
                     elementA.href = blobURL
-                    elementA.download = "record.webm"
+                    elementA.download = "record.mkv"
                     elementA.click()
                     // console.log(e.data.type)
                 }
