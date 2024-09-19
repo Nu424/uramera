@@ -3,5 +3,5 @@
 あくようげんきん。
 
 ## URL
-- https://nu424.github.io/uramera/
+- https://nu424.github.io/uramera/うらめら.html
   - モバイル端末から使用すると、良さげです。
